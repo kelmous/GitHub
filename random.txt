@@ -1,0 +1,9 @@
+import random
+k= random.uniform(10,20)
+q=[]
+value = 0
+while value < k:
+    q.append(random.uniform(50,100))
+    k = k+1
+w = sorted(q)
+print w[0]
