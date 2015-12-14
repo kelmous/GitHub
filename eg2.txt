@@ -1,0 +1,14 @@
+def counter(x,y,z):
+    if(z=="+"):
+        return x+y
+    elif(z=="-"):
+        return x-y
+    elif(z=="*"):
+        return x*y
+    elif(z=="/"):
+        return x/y
+    elif(z=="%"):
+        return x%y
+    else:
+        return x**y
+print counter(8,2.3,"**")
