@@ -1,0 +1,6 @@
+def ismod(x,y):
+    if(x/y==0 or y/x==0):
+        return "yse"
+    else:
+        return "no"
+print ismod(8,4)
