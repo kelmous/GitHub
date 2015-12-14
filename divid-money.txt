@@ -1,0 +1,11 @@
+def howmuch(x):
+    a = x/100
+    b = x%100
+    c = b/25
+    d = b%25
+    e = d/10
+    f = d%10
+    g = f
+    h = 0
+    return [a,c,e,g]
+print howmuch(145)
