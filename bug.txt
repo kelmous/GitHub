@@ -1,0 +1,50 @@
+__author__ = 'Astom'
+def strip():
+    strs = raw_input('input a string:\n')
+    new = u''
+    strs = list(strs)
+    lens = len(strs)
+    for i in range(0,lens):
+        if strs[i]==' ':
+            strs[i] = ''
+        else:
+            break
+    for i in range(-1,-lens-1,-1):
+        if strs[i]==' ':
+            strs[i]=''
+        else:
+            break
+    nstrs = ''
+    for i in range(0,lens):
+        nstrs+=strs[i]
+    return nstrs
+
+
+
+if __name__ =='__main__':
+    print strip()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
