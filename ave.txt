@@ -1,0 +1,13 @@
+def avescore():
+    scorelist = []
+    while True:
+        myinput = raw_input("input the score")
+        try:
+            scorelist.append(float(myinput))
+        except:
+            break
+    if not len(scorelist):
+            return False
+    return sum(scorelist)/len(scorelist)
+if __name__ =='__main__':
+    print avescore()
