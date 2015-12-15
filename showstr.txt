@@ -1,0 +1,13 @@
+def showstr():
+    istr =raw_input('input string')
+    lens = len(istr)
+    if lens==0:
+        return False
+    if lens == 1:
+        print istr
+        return True
+    for i ,j in enumerate(istr):
+        if i==0 and len(istr)!=1:
+            print j,istr[i+1]
+if __name__ =='__main__':
+    print showstr()
