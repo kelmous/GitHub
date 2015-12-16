@@ -1,0 +1,18 @@
+__author__ = 'Astom'
+def num2eng():
+    lists = ['zero','one','two','three','four','five','six','seven','eight','nine']
+    new = ''
+    while True:
+        try:
+            iput = int(raw_input('input a number 0~1000\n'))
+            if iput<0 or iput>1000:
+                continue
+        except:
+            pass
+        break
+    iput = str(iput)
+    for j in iput:
+        new +=  lists[int(j)]+'-'
+    print new
+if __name__ =='__main__':
+    num2eng()
