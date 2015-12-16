@@ -1,0 +1,11 @@
+__author__ = 'Astom'
+def rfindchar(string,char):
+   lens = len(string)
+   sum = 0
+   for i in string[-1:-lens-1:-1]:
+      sum+=1
+      if i == char:
+         return sum-1
+      continue
+if __name__ ==  '__main__':
+    print rfindchar('shdjrloutrew','r')
