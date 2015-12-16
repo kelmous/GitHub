@@ -1,0 +1,66 @@
+__author__ = 'Astom'
+def Rochambeau():
+   import random
+   # print '''
+   # roch :1
+   # cham :2
+   # beau :3
+   # '''
+   # num = raw_input( 'please input a number\n')
+   # pcnum = random.randrange(1,3)
+   # if pcnum>num:
+   #    print "you win"
+   # else:
+   #    print 'yin lose'
+
+   select = ['paper','shears','rock']
+   cli = int(raw_input('Input your select[1.paper 2.shears 3.rock]: '))-1
+   print ' --- You VS Computer ---'
+   print '\nYou[ %s ]' % select[cli],
+   cup = random.choice([0,1,2])
+   print '\tComputer[ %s ]\n'% select[cup]
+   youwin = ' --- You Win!!! ---'
+   cupwin = ' --- Computer Win!!! ---'
+   eq = ' --- Nobody Win ---'
+   if cup == cli:
+      print eq
+   if (cup-cli)==-2 or (cup>cli and (cli-cup !=-2)):
+      print cupwin
+   else:
+      print youwin
+
+
+
+if __name__ ==  '__main__':
+    print Rochambeau()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
