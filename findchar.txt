@@ -1,0 +1,9 @@
+__author__ = 'Astom'
+def findchar(string,char):
+   for i,j in enumerate(string):
+      if j==char:
+         return i
+      continue
+   return -1
+if __name__ ==  '__main__':
+    print   findchar('gjhushi','s')
