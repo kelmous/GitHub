@@ -1,0 +1,26 @@
+__author__ = 'Astom'
+def like():
+   import string
+   import random
+   # Letter = string.ascii_uppercase
+   # letter = string.ascii_lowercase
+   # name = raw_input('input string')
+   # newname =''
+   # for i in name:
+   #    if i in Letter:
+   #       newname+=random.choice(letter)
+   #    continue
+   # for i in name:
+   #    if i in letter:
+   #       newname+=random.choice(Letter)
+   #    continue
+   # #newname+=i
+   # return newname
+   str = raw_input('please input a string')
+   return str.swapcase()
+
+
+if __name__ =='__main__':
+   print like()
+
+
