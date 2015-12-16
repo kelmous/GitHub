@@ -1,0 +1,10 @@
+__author__ = 'Astom'
+def minute2time():
+    minute =int(raw_input('please put a minutes'))
+    hours = minute/60
+    nuwminute = minute -hours*60
+    return '%d:%02d'%(hours,nuwminute)
+if __name__ =='__main__':
+   print minute2time()
+
+
