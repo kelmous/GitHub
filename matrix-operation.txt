@@ -1,0 +1,32 @@
+a1 = [1,2]
+a2 = [2,1]
+b1 = [3,4]
+b2 = [4,2]
+sum11,sum12,sum21,sum22 = 0
+s = raw_input("m low")
+t = raw_input("n low")
+if int(s) != int(t):
+    return False
+if len(a1)!= len(b1):
+    return False
+for i in a1:
+    for j in b1:
+        sum11 += i*j
+for i in a2:
+    for j in b1:
+        sum21+= i*j
+for i in a1:
+    for j in b2:
+        sum12+= i*j
+for i in a2:
+    for j in b2:
+        sum22 += i*j
+print "index of sum is C "
+c11 = a1[0]+b1[0]
+c12 = a1[1]+b2[0]
+c21 = a2[0]+b1[1]
+c22 = a2[1]+b2[1]
+print """
+c11%d c12%d
+c21%d c22%d
+"""%(c11,c12,c21,c22)
