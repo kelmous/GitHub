@@ -1,0 +1,13 @@
+import time
+import turtle
+width = 40
+height = 30
+t=turtle.Pen()
+t.forward(width)
+t.left(90)
+t.forward(height)
+t.left(90)
+t.forward(width)
+t.left(90)
+t.forward(height)
+time.sleep(5)
