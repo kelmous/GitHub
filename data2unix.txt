@@ -1,0 +1,45 @@
+# __author__ = 'Astom'
+#
+# import time
+# import datetime
+# def date2unix(string):
+#     '''
+#     传入可以是：
+#         YYYY-MM-DD
+#         YYYY/MM/SS
+#     '''
+#     if "/" in string:
+#         date  = string.split('/')
+#         year  = int(date[0])
+#         month = int(date[1])
+#         day   = int(date[2])
+#     elif "-" in string:
+#         date  = string.split('-')
+#         year  = int(date[0])
+#         month = int(date[1])
+#         day   = int(date[2])
+#     else:
+#         return "input error"
+#     dateC     = datetime.datetime(year,month,day)
+#     timestamp = time.mktime(dateC.timetuple())
+#     return int(timestamp)
+#
+# def unix2date(string):
+#     '''
+#     传入为unix时间戳
+#     '''
+#     unix = int(string)
+#     ltime   = time.localtime(unix)
+#     timeStr = time.strftime("%Y-%m-%d", ltime)
+#     return timeStr
+#
+# def calcday(date1,date2):
+#     unix1 = date2unix(date1)
+#     unix2 = date2unix(date2)
+#     return (unix2 - unix1)/3600/24
+#     # return False
+#
+# if __name__ ==  '__main__':
+#     date1 = '2014-4-23'
+#     date2 = '2014-05-01'
+#     print calcday(date1,date2)
