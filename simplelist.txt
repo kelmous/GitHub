@@ -1,0 +1,195 @@
+#include<iostream>
+using namespace std;
+template <class datatype>
+struct Node
+{
+	datatype data;
+	Node<datatype> *next;
+};
+template <class datatype>
+class simplelist
+{
+public:
+	simplelist();
+	simplelist(datatype a[],int i);
+	~simplelist();
+	int length();
+	datatype Get(int i);
+	int Locate(datatype x);
+	void insert(datatype x, int i);
+	datatype Delete(int i);
+	void printlist();
+private:
+	Node<datatype> *first;
+
+};
+template <class datatype>
+void simplelist<datatype>::printlist()
+{
+	Node<datatype> *p = first->next;
+	while (p != NULL)
+	{
+		cout << p->data;
+		p = p->next;
+	}
+}
+template <class datatype>
+int simplelist<datatype>::length()
+{
+	Node<datatype> *p = first->next;
+	int count = 0;
+	while (*p != NULL)
+	{
+		p = p->next;
+		count++;
+	}
+	return count;
+}
+template <class datatype>
+datatype simplelist<datatype>::Get(int i)
+{
+	Node<datatype> *p = first->next;
+	int  count = 1;
+	while (*p != NULL&&count < i)
+	{
+		p = p->next;
+		count++;
+	}
+	if (*p == NULL)
+	{
+		cout << "Î»ÖÃ´íÎó";
+	}
+	else
+	{
+		return p->data;
+	}
+	
+}
+template <class datatype>
+int simplelist<datatype>::Locate(datatype x)
+{
+	Node<datatype> *p = first->next;
+	int count = 1;
+	while (*p != NULL)
+	{
+		if (p->data == x)
+		{
+			return count;
+		}
+		p = p->next;
+		count++;
+		
+		
+	}
+	return 0;
+}
+template <class datatype>
+void simplelist<datatype>::insert(datatype x, int i)
+{
+	Node<datatype> *p = first->next;
+	Node<datatype> *newa;
+	
+	int count = 0;
+	while (p != NULL&&count<i-1)
+	{
+		p = p->next;
+		count++;
+	}
+	if (p == NULL)
+		cout << "location is in error";
+	else
+	{
+		newa = new Node<datatype>;
+		newa->next = p->next;
+		p->next = newa;
+		newa->data = x;
+	}
+}
+template <class datatype>
+simplelist<datatype>::simplelist(datatype a[], int i)
+{
+	Node<datatype> *r, *s;
+	first = new Node<datatype>;
+	r = first;
+	for (int j = 0; j < i; j++)
+	{
+		s = new Node<datatype>;
+		s->data = a[j];
+		r->next = s;
+		r = s;
+
+	}
+	r->next = NULL;
+}
+template <class datatype>
+simplelist<datatype>::~simplelist()
+{
+	Node<datatype> *q;
+	while (first != NULL)
+	{
+		q = first;
+		first = first->next;
+		delete q;
+	}
+}
+/*datatype simplelist<datatype>::Delete(int i)
+{
+	Node<datatype> *p;
+	int count = 0;
+	while (*p != NULL&&count < i)
+	{
+		p = p->next;
+		count++;
+
+	}
+	if (*p == NULL)
+	{
+		cout << "location is in error";
+
+	}
+	p = p->next->next;
+	return p->next->data;
+}*/
+template <class datatype>
+datatype simplelist<datatype>::Delete(int i)
+{
+	Node<datatype> *p, *q;
+	datatype x;
+
+	p = first->next;
+	int count = 0;
+	while (p != NULL&&count < i - 1)
+	{
+		p = p->next;
+		count++;
+	}
+	if (p == NULL || p->next == NULL)
+	{
+		cout << "locaton is in error";
+
+	}
+
+	else
+	{   
+		
+		q = p->next;
+		x = q->data;
+		p->next = q->next;
+		delete q;
+		return x;
+
+	}
+
+}
+int main()
+{
+	int a[10] = { 5, 3, 8, 7 };
+	simplelist<int>list(a, 4);
+	list.insert(2,2);
+	list.printlist();
+	cout << endl;
+	list.Delete(3);
+	list.printlist();
+	system("pause");
+	return 0;
+}
